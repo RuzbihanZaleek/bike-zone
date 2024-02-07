@@ -27,3 +27,26 @@ export const footerLinks = [
     ],
   },
 ];
+
+export const manufacturers = [
+  "Honda",
+  "Yamaha",
+  "Suzuki",
+  "Kawasaki",
+  "Ducati",
+  "BMW Motorrad",
+  "Harley-Davidson",
+  "Triumph",
+  "KTM",
+  "Aprilia",
+  "Moto Guzzi",
+  "Indian Motorcycle",
+  "Royal Enfield",
+  "Husqvarna",
+  "MV Agusta",
+  "Zero Motorcycles",
+  "Benelli",
+  "Bajaj Auto",
+  "Piaggio",
+  "Kymco",
+];
