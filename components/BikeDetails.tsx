@@ -65,37 +65,6 @@ function BikeDetails({ isOpen, closeModel, bike }: BikeDetailsProps) {
                         className="object-contain"
                       />
                     </div>
-
-                    {/* Showing 3 images */}
-                    <div className="flex gap-3">
-                      <div className="flex-1 relative w-full h-24 rounded-lg">
-                        <Image
-                          src="/bike2.png"
-                          alt="bike model"
-                          fill
-                          priority
-                          className="object-contain"
-                        />
-                      </div>
-                      <div className="flex-1 relative w-full h-24 rounded-lg">
-                        <Image
-                          src="/bike2.png"
-                          alt="bike model"
-                          fill
-                          priority
-                          className="object-contain"
-                        />
-                      </div>
-                      <div className="flex-1 relative w-full h-24 rounded-lg">
-                        <Image
-                          src="/bike2.png"
-                          alt="bike model"
-                          fill
-                          priority
-                          className="object-contain"
-                        />
-                      </div>
-                    </div>
                   </div>
 
                   {/* Additional Content */}
