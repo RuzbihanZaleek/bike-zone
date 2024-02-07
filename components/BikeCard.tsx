@@ -38,7 +38,7 @@ const BikeCard = ({ bike }: BikeCardProps) => {
           alt="bike model"
           fill
           priority
-          className="object-contain bg-transparent"
+          className="object-contain"
         />
       </div>
 
@@ -79,7 +79,11 @@ const BikeCard = ({ bike }: BikeCardProps) => {
           />
         </div>
       </div>
-      <BikeDetails />
+      <BikeDetails
+        isOpen={isOpen}
+        closeModel={() => setIsOpen(false)}
+        bike={bike}
+      />
     </div>
   );
 };

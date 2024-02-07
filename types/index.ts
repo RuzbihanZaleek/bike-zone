@@ -27,3 +27,9 @@ export interface BikeProps {
   fuel_capacity: string;
   starter: string;
 }
+
+export interface BikeDetailsProps {
+  isOpen: boolean;
+  closeModel: () => void;
+  bike: BikeProps;
+}

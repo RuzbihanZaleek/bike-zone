@@ -20,3 +20,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 2. Create LayOut (Header and Footer) </br>
 3. Create Bike Catalogue and Filter </br>
 4. Rapid API Bikes </br>
+5. BIke Card Details Model </br>
