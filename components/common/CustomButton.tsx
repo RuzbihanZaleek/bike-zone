@@ -8,12 +8,14 @@ function CustomButton({
   containerStyles,
   handleClick,
   btnType,
+  isDisabled,
+  textStyles
 }: CustomButtonProps) {
   return (
     <button
-      disabled={false}
+      disabled={isDisabled}
       type={btnType || "button"}
-      className={`flex flex-row relative justify-center items-center py-3 px-6 outline-none ${containerStyles}`}
+      className={`flex flex-row relative justify-center items-center py-3 px-6 outline-none ${containerStyles} ${textStyles}`}
       onClick={handleClick}
     >
       <span className="flex-1 font-semibold">{title}</span>

@@ -5,6 +5,8 @@ import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 import CustomFilter from "./CustomFilter";
 import SearchManufacturer from "./SearchManufacturer";
+import BikeCard from "./BikeCard";
+import BikeDetails from "./BikeDetails";
 
 export {
   Main,
@@ -14,4 +16,6 @@ export {
   SearchBar,
   CustomFilter,
   SearchManufacturer,
+  BikeCard,
+  BikeDetails,
 };

@@ -1,7 +1,13 @@
 import Image from "next/image";
-import { CustomFilter, Main, SearchBar } from "@/components";
+import { BikeCard, CustomFilter, Main, SearchBar } from "@/components";
+import { fetchBikes } from "@/utils";
 
-export default function Home() {
+export default async function Home() {
+  const allBikes = await fetchBikes();
+
+  const isDataEmpty =
+    !Array.isArray(allBikes) || allBikes.length < 1 || !allBikes;
+
   return (
     <main className="overflow-hidden">
       <Main />
@@ -22,6 +28,18 @@ export default function Home() {
             <CustomFilter />
           </div>
         </div>
+
+        {!isDataEmpty ? (
+          <section>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 w-full gap-8 pt-14">
+              {allBikes.map((bike) => (
+                <BikeCard key={bike} bike={bike} />
+              ))}
+            </div>
+          </section>
+        ) : (
+          <h2 className="text-black text-xl font-bold">Oops, no results!</h2>
+        )}
       </div>
     </main>
   );
