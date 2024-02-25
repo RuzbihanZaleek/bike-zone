@@ -20,10 +20,10 @@ export const footerLinks = [
   {
     title: "Socials",
     links: [
-      { title: "Discord", url: "/" },
-      { title: "Instagram", url: "/" },
-      { title: "Twitter", url: "/" },
-      { title: "Facebook", url: "/" },
+      { title: "Discord", url: "/", img: "/discord.svg" },
+      { title: "LinkedIn", url: "/", img: "/linkedin.svg" },
+      { title: "Twitter", url: "/", img: "/twitter.svg" },
+      { title: "Facebook", url: "/", img: "/facebook.svg" },
     ],
   },
 ];

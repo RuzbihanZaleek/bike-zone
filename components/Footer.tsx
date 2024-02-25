@@ -28,8 +28,16 @@ const Footer = () => {
                 <Link
                   key={item.title}
                   href={item.url}
-                  className="text-gray-500"
+                  className="text-gray-500 flex gap-2"
                 >
+                  {link.title === "Socials" && (
+                    <Image
+                      alt="social-media"
+                      src={item.img}
+                      width={20}
+                      height={20}
+                    />
+                  )}
                   {item.title}
                 </Link>
               ))}
