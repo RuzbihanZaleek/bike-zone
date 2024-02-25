@@ -33,3 +33,11 @@ export interface BikeDetailsProps {
   closeModel: () => void;
   bike: BikeProps;
 }
+
+export interface FilterProps {
+  manufacturer: string;
+  year: number;
+  fuel: string;
+  limit: number;
+  model: string;
+}

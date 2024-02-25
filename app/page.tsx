@@ -2,8 +2,14 @@ import Image from "next/image";
 import { BikeCard, CustomFilter, Main, SearchBar } from "@/components";
 import { fetchBikes } from "@/utils";
 
-export default async function Home() {
-  const allBikes = await fetchBikes();
+export default async function Home({searchParams}) {
+  const allBikes = await fetchBikes({
+    manufacturer: searchParams.manufacturer || '',
+    year: searchParams.year || 2022,
+    fuel: searchParams.fuel || '',
+    limit: searchParams.limit || 10,
+    model: searchParams.model|| '',
+  });
 
   const isDataEmpty =
     !Array.isArray(allBikes) || allBikes.length < 1 || !allBikes;

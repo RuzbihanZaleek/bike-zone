@@ -6,15 +6,21 @@ import { GiElectric, GiSteeringWheel } from "react-icons/gi";
 import AppColors from "@/utils/appColors";
 import { BsFuelPump } from "react-icons/bs";
 import { BikeDetails, CustomButton } from ".";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface BikeCardProps {
   bike: BikeProps;
 }
 
 const BikeCard = ({ bike }: BikeCardProps) => {
-  const bikePrice = (Math.floor(Math.random() * (50 - 10) + 1) + 10) * 100;
   const [isOpen, setIsOpen] = useState(false);
+  const [bikePrice, setBikePrice] = useState(0);
+
+  useEffect(() => {
+    const initialBikePrice =
+      (Math.floor(Math.random() * (50 - 10) + 1) + 10) * 100;
+    setBikePrice(initialBikePrice);
+  }, []);
 
   return (
     <div className="transition duration-300 bg-blue-100 flex flex-col p-6 justify-center items-start text-black rounded-3xl hover:bg-blue-50 hover:shadow-md group">
