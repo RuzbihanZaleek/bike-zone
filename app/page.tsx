@@ -8,8 +8,9 @@ import {
 } from "@/components";
 import { fetchBikes } from "@/utils";
 import { fuels, starter, yearsOfProduction } from "@/constants";
+import { HomeProps } from "@/types";
 
-export default async function Home(searchParams: any) {
+export default async function Home({ searchParams }: HomeProps) {
   const allBikes = await fetchBikes({
     manufacturer: searchParams.manufacturer || "honda",
     year: searchParams.year || 2022,
@@ -56,7 +57,7 @@ export default async function Home(searchParams: any) {
             />
           </section>
         ) : (
-          <h2 className="text-black text-xl font-bold pt-14 pb-48">
+          <h2 className="text-black text-xl font-bold pt-14 pb-48 w-full flex justify-center">
             Oops, no results!
           </h2>
         )}

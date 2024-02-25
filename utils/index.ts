@@ -1,4 +1,4 @@
-import { BikeProps, FilterProps } from "@/types";
+import {FilterProps } from "@/types";
 
 export const fetchBikes = async (filters: FilterProps) => {
   const { manufacturer, year, starter, offset, model } = filters;
@@ -29,4 +29,4 @@ export const updateSearchParams = (type: string, value: string) => {
   const newPathName = `${window.location.pathname}?${searchParams.toString()}`;
 
   return newPathName;
-};
+}; 

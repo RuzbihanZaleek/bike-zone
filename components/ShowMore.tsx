@@ -1,5 +1,6 @@
 "use client";
 
+
 import { ShowMoreProps } from "@/types";
 import { useRouter } from "next/navigation";
 import { CustomButton } from ".";
@@ -10,7 +11,6 @@ const ShowMore = ({ pageNumber, isNextPageExist }: ShowMoreProps) => {
 
   const handleNavigation = () => {
     const newLimit = (pageNumber + 1) * 10;
-    console.log(newLimit);
     
     const newPathName = updateSearchParams("offset", `${newLimit}`);
     router.push(newPathName);
