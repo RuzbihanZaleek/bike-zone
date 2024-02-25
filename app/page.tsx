@@ -1,14 +1,20 @@
 import Image from "next/image";
-import { BikeCard, CustomFilter, Main, SearchBar } from "@/components";
+import {
+  BikeCard,
+  CustomFilter,
+  Main,
+  SearchBar,
+  ShowMore,
+} from "@/components";
 import { fetchBikes } from "@/utils";
 import { fuels, starter, yearsOfProduction } from "@/constants";
 
-export default async function Home({ searchParams }) {
+export default async function Home(searchParams: any) {
   const allBikes = await fetchBikes({
-    manufacturer: searchParams.manufacturer || "",
+    manufacturer: searchParams.manufacturer || "honda",
     year: searchParams.year || 2022,
     starter: searchParams.starter || "",
-    limit: searchParams.limit || 10,
+    offset: searchParams.offset || 10,
     model: searchParams.model || "",
   });
 
@@ -32,7 +38,7 @@ export default async function Home({ searchParams }) {
 
           <div className="flex justify-start flex-wrap items-center gap-2">
             {/* Filter options */}
-            <CustomFilter title="starter" options={starter} />
+            {/* <CustomFilter title="starter" options={starter} /> */}
             <CustomFilter title="year" options={yearsOfProduction} />
           </div>
         </div>
@@ -44,9 +50,15 @@ export default async function Home({ searchParams }) {
                 <BikeCard key={bike} bike={bike} />
               ))}
             </div>
+            <ShowMore
+              pageNumber={(searchParams.offset || 10) / 10}
+              isNextPageExist={(searchParams.offset || 10) < allBikes.length}
+            />
           </section>
         ) : (
-            <h2 className="text-black text-xl font-bold pt-14 pb-48">Oops, no results!</h2>
+          <h2 className="text-black text-xl font-bold pt-14 pb-48">
+            Oops, no results!
+          </h2>
         )}
       </div>
     </main>

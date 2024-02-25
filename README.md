@@ -24,3 +24,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 6. Search </br>
 7. Server Side Rendering </br>
 8. Custom Filters </br>
+9. Show More </br>

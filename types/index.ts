@@ -38,7 +38,7 @@ export interface FilterProps {
   manufacturer: string;
   year: number;
   starter: string;
-  limit: number;
+  offset: number;
   model: string;
 }
 
@@ -50,4 +50,9 @@ export interface OptionProps {
 export interface CustomFilterProps {
   title: string;
   options: OptionProps[];
+}
+
+export interface ShowMoreProps {
+  pageNumber: number;
+  isNextPageExist: boolean;
 }
