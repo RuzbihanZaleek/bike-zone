@@ -37,7 +37,17 @@ export interface BikeDetailsProps {
 export interface FilterProps {
   manufacturer: string;
   year: number;
-  fuel: string;
+  starter: string;
   limit: number;
   model: string;
+}
+
+export interface OptionProps {
+  title: string;
+  value: string;
+}
+
+export interface CustomFilterProps {
+  title: string;
+  options: OptionProps[];
 }

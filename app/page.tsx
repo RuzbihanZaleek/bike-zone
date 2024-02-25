@@ -1,14 +1,15 @@
 import Image from "next/image";
 import { BikeCard, CustomFilter, Main, SearchBar } from "@/components";
 import { fetchBikes } from "@/utils";
+import { fuels, starter, yearsOfProduction } from "@/constants";
 
-export default async function Home({searchParams}) {
+export default async function Home({ searchParams }) {
   const allBikes = await fetchBikes({
-    manufacturer: searchParams.manufacturer || '',
+    manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
-    fuel: searchParams.fuel || '',
+    starter: searchParams.starter || "",
     limit: searchParams.limit || 10,
-    model: searchParams.model|| '',
+    model: searchParams.model || "",
   });
 
   const isDataEmpty =
@@ -31,7 +32,8 @@ export default async function Home({searchParams}) {
 
           <div className="flex justify-start flex-wrap items-center gap-2">
             {/* Filter options */}
-            <CustomFilter />
+            <CustomFilter title="starter" options={starter} />
+            <CustomFilter title="year" options={yearsOfProduction} />
           </div>
         </div>
 
@@ -44,7 +46,7 @@ export default async function Home({searchParams}) {
             </div>
           </section>
         ) : (
-          <h2 className="text-black text-xl font-bold">Oops, no results!</h2>
+            <h2 className="text-black text-xl font-bold pt-14 pb-48">Oops, no results!</h2>
         )}
       </div>
     </main>

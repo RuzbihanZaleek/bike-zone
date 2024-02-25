@@ -23,3 +23,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 5. BIke Card Details Model </br>
 6. Search </br>
 7. Server Side Rendering </br>
+8. Custom Filters </br>

@@ -1,7 +1,7 @@
 import { BikeProps, FilterProps } from "@/types";
 
 export const fetchBikes = async (filters: FilterProps) => {
-  const { manufacturer, year, fuel, limit, model } = filters;
+  const { manufacturer, year, starter, limit, model } = filters;
 
   const headers = {
     "X-Api-Key": "4foN5kQ3AzjLdzqiLrvpTA==W3NArr7GeUT7QoZk",
@@ -9,7 +9,7 @@ export const fetchBikes = async (filters: FilterProps) => {
 
   try {
     const response = await fetch(
-      `https://api.api-ninjas.com/v1/motorcycles?make=${manufacturer}&year=${year}&fuel=${fuel}&limit=${limit}&model=${model}`,
+      `https://api.api-ninjas.com/v1/motorcycles?make=${manufacturer}&year=${year}&limit=${limit}&model=${model}&starter=${starter}`,
       { headers: headers }
     );
 
@@ -19,4 +19,14 @@ export const fetchBikes = async (filters: FilterProps) => {
   } catch (error) {
     console.error(error);
   }
+};
+
+export const updateSearchParams = (type: string, value: string) => {
+  const searchParams = new URLSearchParams(window.location.search);
+
+  searchParams.set(type, value);
+
+  const newPathName = `${window.location.pathname}?${searchParams.toString()}`;
+
+  return newPathName;
 };
